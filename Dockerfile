@@ -29,6 +29,7 @@ RUN pip3 install --upgrade https://github.com/myelintek/lib-mlsteam/releases/dow
 ADD src /mlsteam/lab
 
 ADD bash.bashrc /etc/bash.bashrc
+RUN pip3 install --upgrade jupyter_client
 
 RUN mc config host add ms3 https://s3.myelintek.com minioadmin 83536253  && \ 
 	mc mirror --overwrite ms3/kinetics400-tiny/ /mlsteam/data/ && \
